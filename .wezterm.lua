@@ -1,12 +1,16 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 --local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
-
 -- Config stuff here
 config.font = wezterm.font('Source Code Pro')
---config.colors = theme.colors()
---config.colors.cursor_bg = '#08dd17'
---config.colors.cursor_fg = '#000000'
+
+local rosePineScheme = wezterm.color.get_builtin_schemes()['rose-pine']
+rosePineScheme.selection_bg = "#3b4252"
+config.color_schemes = {
+    ['rose-pine'] = rosePineScheme,
+}
+config.color_scheme = 'rose-pine'
+
 config.default_prog = {'C:\\Users\\brandon.hunt\\AppData\\Local\\Programs\\Git\\bin\\bash.exe', '--login', '-i'}
 config.default_cwd = 'X:\\'
 config.enable_tab_bar=false
