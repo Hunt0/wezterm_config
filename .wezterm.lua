@@ -37,6 +37,7 @@ config.keys = {
     { key = '6', mods = 'LEADER', action=wezterm.action{ActivateTab=6}},
     { key = '7', mods = 'LEADER', action=wezterm.action{ActivateTab=7}},
     { key = '8', mods = 'LEADER', action=wezterm.action{ActivateTab=8}},
+    { key = 'Enter', mods = 'LEADER', action=wezterm.action.ActivateCopyMode },
 }
 
 return config
