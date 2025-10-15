@@ -2,14 +2,14 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 --local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 -- Config stuff here
-config.font = wezterm.font('Source Code Pro')
+config.font = wezterm.font('SauceCodePro Nerd Font Mono')
 
-local rosePineScheme = wezterm.color.get_builtin_schemes()['rose-pine']
+local rosePineScheme = wezterm.color.get_builtin_schemes()['rose-pine-moon']
 rosePineScheme.selection_bg = "#3b4252"
 config.color_schemes = {
-    ['rose-pine'] = rosePineScheme,
+    ['rose-pine-moon'] = rosePineScheme,
 }
-config.color_scheme = 'rose-pine'
+config.color_scheme = 'rose-pine-moon'
 
 config.default_prog = {'C:\\Users\\brandon.hunt\\AppData\\Local\\Programs\\Git\\bin\\bash.exe', '--login', '-i'}
 config.default_cwd = 'X:\\'
@@ -21,10 +21,10 @@ config.keys = {
     { key = 'd', mods = 'LEADER', action = wezterm.action{CloseCurrentPane={confirm=false}}},
     { key = '%', mods = 'LEADER|SHIFT', action = wezterm.action{SplitHorizontal={ domain='CurrentPaneDomain' }}},
     { key = '"', mods = 'LEADER|SHIFT', action = wezterm.action{SplitVertical={ domain='CurrentPaneDomain' }}},
-    { key = 'h', mods = 'SHIFT|CTRL', action=wezterm.action{ActivatePaneDirection='Left'}},
-    { key = 'j', mods = 'SHIFT|CTRL', action=wezterm.action{ActivatePaneDirection='Down'}},
-    { key = 'k', mods = 'SHIFT|CTRL', action=wezterm.action{ActivatePaneDirection='Up'}},
-    { key = 'l', mods = 'SHIFT|CTRL', action=wezterm.action{ActivatePaneDirection='Right'}},
+    { key = 'h', mods = 'LEADER', action=wezterm.action{ActivatePaneDirection='Left'}},
+    { key = 'j', mods = 'LEADER', action=wezterm.action{ActivatePaneDirection='Down'}},
+    { key = 'k', mods = 'LEADER', action=wezterm.action{ActivatePaneDirection='Up'}},
+    { key = 'l', mods = 'LEADER', action=wezterm.action{ActivatePaneDirection='Right'}},
     { key = 'v', mods = 'SHIFT|CTRL', action=wezterm.action.PasteFrom 'Clipboard' },
     { key = 'c', mods = 'SHIFT|CTRL', action=wezterm.action.CopyTo 'Clipboard' },
     { key = 'n', mods = 'LEADER', action='ToggleFullScreen' },
@@ -37,7 +37,7 @@ config.keys = {
     { key = '6', mods = 'LEADER', action=wezterm.action{ActivateTab=6}},
     { key = '7', mods = 'LEADER', action=wezterm.action{ActivateTab=7}},
     { key = '8', mods = 'LEADER', action=wezterm.action{ActivateTab=8}},
-    { key = 'Enter', mods = 'LEADER', action=wezterm.action.ActivateCopyMode },
+    { key = '[', mods = 'LEADER', action=wezterm.action.ActivateCopyMode },
 }
 
 return config
